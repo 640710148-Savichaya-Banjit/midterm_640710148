@@ -9,23 +9,23 @@ class my_Calculator extends StatefulWidget {
 }
 
 class _my_CalculatorState extends State<my_Calculator> {
-  String _number = '0';
+  var number = '';
 
   Widget build_button(String text, Color color) {
     return InkWell(
       onTap: () {
         setState(() {
-          if (_number == '0') {
+          if (number == '0') {
             if (text != '÷' && text != 'x' && text != '-' && text != '+') {
-              _number = text;
+              number = text;
             } else if (text == '÷' ||
                 text == 'x' ||
                 text == '-' ||
                 text == '+') {
-              _number = '0';
+              number = '0';
             }
-          } else if (_number != '0') {
-            _number = _number + "" + text;
+          } else if (number != '0') {
+            number = number + '' + text;
           }
         });
       },
@@ -58,7 +58,7 @@ class _my_CalculatorState extends State<my_Calculator> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      _number,
+                      number,
                       style: GoogleFonts.notoSansThai(fontSize: 50.0),
                     ),
                   ],
@@ -77,7 +77,7 @@ class _my_CalculatorState extends State<my_Calculator> {
                         child: InkWell(
                           onTap: () {
                             setState(() {
-                              _number = '0';
+                              number = '0';
                             });
                           },
                           child: Container(
@@ -103,7 +103,7 @@ class _my_CalculatorState extends State<my_Calculator> {
                         child: InkWell(
                           onTap: () {
                             setState(() {
-                              _number = "0";
+                              number = '0';
                             });
                           },
                           child: Container(
@@ -247,7 +247,7 @@ class _my_CalculatorState extends State<my_Calculator> {
                     child: InkWell(
                       onTap: () {
                         setState(() {
-                          _number = '0';
+                          number = '0';
                         });
                       },
                       child: Container(
